@@ -1,0 +1,55 @@
+﻿@model CCSVSystem.Models.Proveedor
+
+
+<div class="modal fade" tabindex="-1" id="EditarProveedor" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Editar Proveedor</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body m-2">
+                <div class="row">
+                    <div class="">
+                        <form action="@Url.Action("GuardarCambiosProveedor")">
+                            <div asp-validation-summary="All" class="text-danger" hidden></div>
+                            <div class="form-group">
+                                <label asp-for="idProveedor" class="control-label"></label>
+                                <input asp-for="idProveedor" class="form-control" disabled />
+                                <span asp-validation-for="idProveedor" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="nombreProveedor" class="control-label"></label>
+                                <input asp-for="nombreProveedor" class="form-control" />
+                                <span asp-validation-for="nombreProveedor" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="contactoProveedor" class="control-label"></label>
+                                <input asp-for="contactoProveedor" class="form-control" placeholder="0000-0000" />
+                                <span asp-validation-for="contactoProveedor" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="comentarios" class="control-label"></label>
+                                <textarea asp-for="comentarios" class="form-control"></textarea>
+                                <span asp-validation-for="comentarios" class="text-danger"></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-success" data-save="modal" data-index="@Url.Action("Index")">Guardar Cambios</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

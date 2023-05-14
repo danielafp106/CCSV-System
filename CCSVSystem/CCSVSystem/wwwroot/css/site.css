@@ -1,3 +1,9 @@
+:root {
+    --color-principal: #35C059;
+    --color-principal-hover: #33AF53;
+    --color-secundario: #262626;
+    --color-secundario-hover: #424242;
+}
 html {
   font-size: 14px;
 }
@@ -15,4 +21,35 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+.buttonprimary {
+    background-color: var(--color-principal);
+    color: white;
+}
+
+.buttonprimary:hover {
+    background-color: var(--color-principal-hover);
+    color: white;
+    font-weight: bold;
+}
+
+.whitetextbtn{
+    color:white;
+    text-decoration:none;
+    font-weight: bold;
+}
+
+.whitetextbtn:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.buttonsecondary {
+    background-color: var(--color-secundario);
+    color: white;
+}
+
+.buttonsecondary:hover {
+    background-color: var(--color-secundario-hover);
+    color: white;
 }

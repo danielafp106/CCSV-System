@@ -1,20 +1,23 @@
 ﻿using CCSVSystem.Models;
+using CCSVSystem.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+
 
 namespace CCSVSystem.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly API_Interface _api;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(API_Interface api)
         {
-            _logger = logger;
+            _api = api;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            //Proveedor ps = await _api.ObtenerProveedor("PVD0000002");
             return View();
         }
 

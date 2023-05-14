@@ -1,0 +1,110 @@
+﻿@model IEnumerable<CCSVSystem.Models.Proveedor>
+
+@{
+    ViewData["Title"] = "Proveedores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+<div class="d-flex justify-content-between">
+    <p class="display-6">@ViewData["Title"]</p>
+    <div class="align-self-center">
+        <button type="button" class="btn buttonprimary" data-url="@Url.Action("NuevoProveedorModal")" data-toggle="ajax-modal" data-target="#NuevoProveedor"><i class="bi bi-plus-lg"></i> <a class="whitetextbtn">Nuevo </a></button>
+    </div>
+   
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idProveedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombreProveedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.contactoProveedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.comentarios)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idProveedor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombreProveedor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.contactoProveedor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.comentarios)
+                </td>
+                <td>
+                    <button type="button" class="btn buttonsecondary" data-toggle="ajax-modal" data-target="#VerProveedor" data-url="@Url.Action("VerProveedorModal", new { idProveedor = item.idProveedor })">
+                        <i class="bi bi-eye-fill"></i>
+                    </button>
+                    <button type="button" class="btn btn-info" style="color:white;" data-toggle="ajax-modal" data-target="#EditarProveedor" data-url="@Url.Action("EditarProveedorModal", new { idProveedor = item.idProveedor })">
+                        <i class="bi bi-pencil-fill"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger" onclick="EliminarRegistro('@item.idProveedor')">
+                        <i class="bi bi-trash-fill"></i> 
+                    </button>
+                    
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    function EliminarRegistro(idPrvoeedor){
+        const options = {
+            method: 'DELETE'}       
+        var url = '@ViewBag.UrlAPI' + idPrvoeedor;
+        Swal.fire({
+            title: '¿Desea eliminar este proveedor?',
+            showCancelButton: true,
+            confirmButtonText: 'Eliminar',
+            cancelButtonText: 'Cancelar',
+            showLoaderOnConfirm: true,
+            preConfirm: (id) => {
+                return fetch(url, options)
+                    .then(response => {
+                        console.log(response);
+                        if (!response.ok) {
+                            throw new Error(response.statusText)
+                        }
+                        return response.json()
+                    })
+                    .catch(error => {
+                        Swal.showValidationMessage(
+                            `Request failed: ${error}`
+                        )
+                    })
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Eliminado con éxito!',
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then((result) => {
+                   window.location.reload();
+                })
+            }
+        })
+    }
+</script>
+

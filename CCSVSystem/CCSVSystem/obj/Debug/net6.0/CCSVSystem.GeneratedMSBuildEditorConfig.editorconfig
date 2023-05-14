@@ -24,6 +24,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[Z:/SISTEMA CACHADA CASES/SISTEMA/CCSV-System/CCSVSystem/CCSVSystem/Views/Proveedores/EditarProveedorModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yZXNcRWRpdGFyUHJvdmVlZG9yTW9kYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[Z:/SISTEMA CACHADA CASES/SISTEMA/CCSV-System/CCSVSystem/CCSVSystem/Views/Proveedores/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[Z:/SISTEMA CACHADA CASES/SISTEMA/CCSV-System/CCSVSystem/CCSVSystem/Views/Proveedores/NuevoProveedorModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yZXNcTnVldm9Qcm92ZWVkb3JNb2RhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[Z:/SISTEMA CACHADA CASES/SISTEMA/CCSV-System/CCSVSystem/CCSVSystem/Views/Proveedores/VerProveedorModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yZXNcVmVyUHJvdmVlZG9yTW9kYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [Z:/SISTEMA CACHADA CASES/SISTEMA/CCSV-System/CCSVSystem/CCSVSystem/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
