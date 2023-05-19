@@ -1,0 +1,230 @@
+﻿@model IEnumerable<CCSVSystem.Models.Paqueteria>
+
+@{
+    ViewData["Title"] = "Paqueteria";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+<div class="d-flex justify-content-between">
+    <p class="display-6">@ViewData["Title"]</p>
+    <div class="align-self-center">
+        <button type="button" class="btn buttonprimary" data-url="@Url.Action("NuevaPaqueteriaModal")" data-toggle="ajax-modal" data-target="#NuevaPaqueteria"><i class="bi bi-plus-lg"></i> <a class="whitetextbtn">Nuevo </a></button>
+    </div>
+
+</div>
+<table class="table accordion">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.idPaqueteria)
+            </th>      
+            <th>
+                @Html.DisplayNameFor(model => model.nombrePaqueteria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.proveedor)
+            </th>           
+            <th></th>
+                 <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int i = 0;
+        }
+        @foreach (var item in Model)
+        {
+            var id = "r" + (i++);
+            <tr class="align-middle">
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.idPaqueteria)
+                </td>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombrePaqueteria)
+                </td>
+                <td>
+                    <span class="badge rounded-pill pill">
+                        @Html.DisplayFor(modelItem => item.proveedor.nombreProveedor)
+                    </span>
+
+                </td>
+                <td class="text-center">
+                    <button type="button" class="btn buttonsecondary" data-bs-toggle="collapse" data-bs-target="#@id">
+                        <i class="bi bi-currency-dollar"></i>
+                    </button>
+                    <button type="button" class="btn buttonprimary" data-url="@Url.Action("NuevoPrecioPaqueteria", new { idPaqueteria = item.idPaqueteria, nombrePaqueteria = item.nombrePaqueteria})" data-toggle="ajax-modal" data-target="#NuevoPrecioPaqueteria">
+                        <i class="bi bi-bag-plus-fill"></i>
+                        </button>              
+                    <button type="button" class="btn btn-info" style="color:white;" data-toggle="ajax-modal" data-target="#EditarPaqueteria" data-url="@Url.Action("EditarPaqueteriaModal", new { idPaqueteria = item.idPaqueteria })">
+                        <i class="bi bi-pencil-fill"></i>
+                    </button>
+                    @if (item.preciosPaqueteria.Count == 0)
+                    {
+                        <button type="button" class="btn btn-danger" onclick="EliminarRegistro('@item.idPaqueteria')">
+                            <i class="bi bi-trash-fill"></i>
+                        </button>
+                    }                                   
+                </td>
+                <td>
+                    <img src="@Html.DisplayFor(modelItem => item.urlImagenPaqueteria)" class="rounded mx-auto d-block" style="width:75px;">
+                </td>
+            </tr>
+            <tr class="collapseContainingDiv">
+                <td colspan="5">
+                    <div class="collapse accordion-collapse pt-2 pb-2 actualitem" id='@id' style="width:95%; margin:0 auto;" onclick="NotClosed('@id')">
+                        <div class="align-self-center pt-2 pb-2 card" style="width:100%;">                           
+                            @if(item.preciosPaqueteria.Count!=0)
+                            {
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">
+                                                @Html.DisplayNameFor(model => model.pp.esPaqueteriaRecurrente)
+                                            </th>
+                                            <th class="text-center">
+                                                @Html.DisplayNameFor(model => model.pp.fechaCompra)
+                                            </th>
+                                            <th class="text-center">
+                                                @Html.DisplayNameFor(model => model.pp.stockTotalCompradoPaqueteria)
+                                            </th>
+                                            <th class="text-center">
+                                                @Html.DisplayNameFor(model => model.pp.compraTotalPaqueteria)
+                                            </th>
+                                            <th class="text-center">
+                                                @Html.DisplayNameFor(model => model.pp.precioUnidadPaqueteria)
+                                            </th>
+                                            <th class="text-center">
+                                                @Html.DisplayNameFor(model => model.pp.fechaInicioUso)
+                                            </th>
+                                            <th class="text-center">
+                                                @Html.DisplayNameFor(model => model.pp.fechaFinUso)
+                                            </th>
+                                            <th class="text-center">
+                                                Acciones
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var pps in item.preciosPaqueteria)
+                                        {
+                                            <tr class="align-middle">
+                                                <td class="text-center">
+                                                    <input class="form-check-input" type="checkbox" id="checkboxNoLabel" checked="@(pps.esPaqueteriaRecurrente)" onclick="this.checked=!this.checked;">
+                                                </td>
+                                                <td class="text-center">
+                                                    @pps.fechaCompra.Value.ToString("dd/MMMM/yyyy")
+                                                </td>
+                                                <td class="text-center">
+                                                    @pps.stockTotalCompradoPaqueteria
+                                                </td>
+                                                <td class="text-center">
+                                                    $@String.Format("{0:0.00}", pps.compraTotalPaqueteria)
+                                                </td>
+                                                <td class="text-center">
+                                                    $@String.Format("{0:0.00}", pps.precioUnidadPaqueteria)
+                                                </td>
+                                                <td class="text-center">
+                                                    @(!pps.fechaInicioUso.Value.ToString("dd/MMMM/yyyy").Equals("01/enero/2000") ? pps.fechaInicioUso.Value.ToString("dd/MMMM/yyyy") : "Sin empezar")
+                                                </td>
+                                                <td class="text-center">
+                                                    @if (pps.fechaFinUso.Value.ToString("dd/MMMM/yyyy").Equals("01/enero/2000"))
+                                                    {
+                                                        @if (pps.fechaInicioUso.Value.ToString("dd/MMMM/yyyy").Equals("01/enero/2000"))
+                                                        {
+                                                            @("Sin empezar");
+                                                        }
+                                                        else
+                                                        {
+                                                             <span class="badge rounded-pill pill">EN USO</span>
+                                                        }                                                                                                          
+                                                    }
+                                                    else
+                                                    {
+                                                        @pps.fechaFinUso.Value.ToString("dd/MMMM/yyyy");
+                                                    }
+                                                </td>
+                                                <td class="text-center">
+                                                    @if (pps.fechaFinUso.Value.ToString("dd/MMMM/yyyy").Equals("01/enero/2000") && !pps.fechaInicioUso.Value.ToString("dd/MMMM/yyyy").Equals("01/enero/2000"))
+                                                    {
+                                                        <button type="button" class="btn btn-outline-warning buttonclear" style="border-color: transparent;" data-toggle="ajax-modal" data-target="#VerProveedor" data-url="@Url.Action("VerProveedorModal", new { idProveedor = item.idProveedor })">
+                                                            <i class="bi bi-lock-fill"></i>
+                                                        </button>
+                                                    }                        
+                                                    <button type="button" class="btn btn-outline-info buttonclear" style="border-color: transparent;" data-toggle="ajax-modal" data-target="#EditarProveedor" data-url="@Url.Action("EditarProveedorModal", new { idProveedor = item.idProveedor })">
+                                                        <i class="bi bi-pencil-fill"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-outline-danger buttonclear" style="border-color: transparent;" onclick="EliminarRegistro('@item.idProveedor')">
+                                                        <i class="bi bi-trash-fill"></i>
+                                                    </button>
+
+
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            }
+                            else
+                            {
+                                <p class="text-center pt-3">Esta paquetería no tiene stock registrado.</p>
+                            }
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<script>
+    function EliminarRegistro(idPrvoeedor) {
+        const options = {
+            method: 'DELETE'
+        }
+        var url = '@ViewBag.UrlAPI' + idPrvoeedor;
+        Swal.fire({
+            title: '¿Desea eliminar esta paqueteria?',
+            showCancelButton: true,
+            confirmButtonText: 'Eliminar',
+            cancelButtonText: 'Cancelar',
+            showLoaderOnConfirm: true,
+            preConfirm: (id) => {
+                return fetch(url, options)
+                    .then(response => {
+                        console.log(response);
+                        if (!response.ok) {
+                            throw new Error(response.statusText)
+                        }
+                        return response.json()
+                    })
+                    .catch(error => {
+                        Swal.showValidationMessage(
+                            `Request failed: ${error}`
+                        )
+                    })
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Eliminado con éxito!',
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then((result) => {
+                    window.location.reload();
+                })
+            }
+        })
+    }
+
+   
+</script>
+

@@ -16,6 +16,7 @@ namespace CCSVSystem.Controllers
             var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json").Build();
             _baseurl = builder.GetSection("ApiSettings:baseUrl").Value;
         }
+
         public async Task<IActionResult> Index()
         {
             try
@@ -66,8 +67,7 @@ namespace CCSVSystem.Controllers
                 }
                 else
                 {
-                    TempData["mensajeResultado"] = "Algo salió mal, vuelva a intentarlo";
-                    throw new Exception("Algo salió mal, vuelva a intentarlo.");
+                    return Json(new { success = false, responseText = "Algo salió mal, vuelva a intentarlo más tarde." });
                 }
             }
             return PartialView("NuevoProveedorModal", o);
@@ -95,8 +95,7 @@ namespace CCSVSystem.Controllers
                 }
                 else
                 {
-                    TempData["mensajeResultado"] = "Algo salió mal, vuelva a intentarlo";
-                    throw new Exception("Algo salió mal, vuelva a intentarlo.");
+                    return Json(new { success = false, responseText = "Algo salió mal, vuelva a intentarlo más tarde." });
                 }
             }
             return PartialView("EditarProveedorModal", o);

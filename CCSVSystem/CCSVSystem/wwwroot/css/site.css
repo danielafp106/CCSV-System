@@ -3,6 +3,7 @@
     --color-principal-hover: #33AF53;
     --color-secundario: #262626;
     --color-secundario-hover: #424242;
+    --info-color-mine: #0B97B4;
 }
 html {
   font-size: 14px;
@@ -49,7 +50,46 @@ body {
     color: white;
 }
 
+.buttonclear:hover {
+    background-color: transparent;
+    color: black;
+}
+
 .buttonsecondary:hover {
     background-color: var(--color-secundario-hover);
     color: white;
 }
+
+.pill {
+    background-color: var(--color-principal);
+    color: white;
+}
+
+.collapseContainingDiv td {
+    padding: 0 !important;
+}
+
+.hiddenRow {
+    padding: 0 !important;
+}
+
+.form-group {
+    padding-bottom: 5px;
+}
+
+.control-label{
+    font-weight: 500;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Works for Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+

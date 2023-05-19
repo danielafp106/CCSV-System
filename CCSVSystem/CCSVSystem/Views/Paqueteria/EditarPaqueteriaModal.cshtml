@@ -1,0 +1,61 @@
+﻿@model CCSVSystem.Models.Paqueteria
+
+
+<div class="modal fade" tabindex="-1" id="EditarPaqueteria" data-keyboard="false" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Editar Paqueteria</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body m-2">
+                <div class="row">
+                    <div class="">
+                        <form action="@Url.Action("GuardarCambiosPaqueteria")">
+                            <div asp-validation-summary="All" class="text-danger" hidden></div>
+                            <div class="form-group">
+                                <label asp-for="idPaqueteria" class="control-label"></label>
+                                <input asp-for="idPaqueteria" class="form-control" disabled />
+                                <span asp-validation-for="idPaqueteria" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="nombrePaqueteria" class="control-label"></label>
+                                <input asp-for="nombrePaqueteria" class="form-control" />
+                                <span asp-validation-for="nombrePaqueteria" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="idProveedor" class="control-label"></label>
+                                <select asp-for="idProveedor" class="form-select">
+                                    <option disabled selected hidden>Seleccione un Proveedor</option>
+                                    @foreach (var p in ViewBag.provs)
+                                    {
+                                        <option value="@p.idProveedor">@p.nombreProveedor</option>
+                                    }
+                                </select>
+                                <span asp-validation-for="idProveedor" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="urlImagenPaqueteria" class="control-label"></label>
+                                <input asp-for="urlImagenPaqueteria" class="form-control" />
+                                <span asp-validation-for="urlImagenPaqueteria" class="text-danger"></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-success" data-save="modal" data-index="@Url.Action("Index")">Guardar Cambios</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

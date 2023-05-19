@@ -5,6 +5,534 @@
       "PackagePath": "staticwebassets\\CCSVSystem.bundle.scp.css"
     },
     {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap.css"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.js"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_accordion.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_accordion.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_alert.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_alert.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_badge.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_badge.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_breadcrumb.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_button-group.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_button-group.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_buttons.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_buttons.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_card.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_card.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_carousel.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_carousel.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_close.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_close.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_containers.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_containers.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_dropdown.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_forms.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_forms.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_functions.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_functions.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_grid.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_grid.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_helpers.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_helpers.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_images.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_images.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_list-group.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_list-group.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_maps.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_maps.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_modal.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_modal.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_nav.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_nav.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_navbar.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_navbar.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_offcanvas.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_offcanvas.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_pagination.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_pagination.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_placeholders.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_placeholders.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_popover.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_popover.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_progress.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_progress.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_reboot.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_reboot.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_root.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_root.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_spinners.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_spinners.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_tables.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_tables.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_toasts.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_toasts.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_tooltip.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_tooltip.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_transitions.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_transitions.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_type.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_type.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_utilities.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_utilities.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\_variables.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\bootstrap-grid.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\bootstrap-grid.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\bootstrap-reboot.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\bootstrap-reboot.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\bootstrap-utilities.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\bootstrap-utilities.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\bootstrap.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\forms\\_floating-labels.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\forms\\_floating-labels.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\forms\\_form-check.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\forms\\_form-check.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\forms\\_form-control.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\forms\\_form-control.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\forms\\_form-range.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\forms\\_form-range.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\forms\\_form-select.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\forms\\_form-select.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\forms\\_form-text.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\forms\\_form-text.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\forms\\_input-group.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\forms\\_input-group.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\forms\\_labels.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\forms\\_labels.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\forms\\_validation.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\forms\\_validation.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\helpers\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\helpers\\_clearfix.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\helpers\\_color-bg.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\helpers\\_color-bg.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\helpers\\_colored-links.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\helpers\\_colored-links.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\helpers\\_position.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\helpers\\_position.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\helpers\\_ratio.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\helpers\\_ratio.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\helpers\\_stacks.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\helpers\\_stacks.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\helpers\\_stretched-link.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\helpers\\_stretched-link.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\helpers\\_text-truncation.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\helpers\\_text-truncation.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\helpers\\_visually-hidden.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\helpers\\_visually-hidden.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\helpers\\_vr.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\helpers\\_vr.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_alert.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_alert.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_backdrop.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_backdrop.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_banner.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_banner.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_border-radius.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_border-radius.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_box-shadow.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_box-shadow.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_breakpoints.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_breakpoints.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_caret.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_caret.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_clearfix.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_color-scheme.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_color-scheme.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_container.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_container.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_deprecate.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_deprecate.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_forms.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_forms.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_gradients.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_gradients.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_grid.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_grid.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_image.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_image.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_list-group.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_list-group.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_lists.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_lists.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_pagination.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_pagination.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_reset-text.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_reset-text.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_resize.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_resize.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_table-variants.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_table-variants.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_text-truncate.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_text-truncate.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_transition.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_transition.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_utilities.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_utilities.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\mixins\\_visually-hidden.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\mixins\\_visually-hidden.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\utilities\\_api.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\utilities\\_api.scss"
+    },
+    {
+      "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\bootstrap\\scss\\vendor\\_rfs.scss",
+      "PackagePath": "staticwebassets\\bootstrap\\scss\\vendor\\_rfs.scss"
+    },
+    {
       "Id": "Z:\\SISTEMA CACHADA CASES\\SISTEMA\\CCSV-System\\CCSVSystem\\CCSVSystem\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

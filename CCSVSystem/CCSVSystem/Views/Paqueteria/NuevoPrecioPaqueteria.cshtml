@@ -1,0 +1,96 @@
+﻿@model CCSVSystem.Models.PrecioPaqueteria
+
+
+<div class="modal fade" tabindex="-1" id="NuevoPrecioPaqueteria" data-keyboard="false" data-bs-backdrop="static">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Nuevo Stock</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body m-2">
+                <form action="@Url.Action("GuardarPrecioPaqueteria")">
+                    <div asp-validation-summary="All" class="text-danger" hidden></div>
+                <div class="row justify-content-center">                        
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label asp-for="idPaqueteria" class="control-label"></label>
+                                <input asp-for="idPaqueteria" class="form-control" hidden />
+                                <input class="form-control" value="@Model.idPaqueteria - @ViewBag.nombrePaqueteria" disabled/>
+                                <span asp-validation-for="idPaqueteria" class="text-danger"></span>
+                            </div>
+                        </div>
+                </div>
+                <div class="row justify-content-center">
+                        <div class="col-6">                           
+                            <div class="form-group">
+                                <label asp-for="compraTotalPaqueteria" class="control-label"></label>
+                                <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                    <input type="number" asp-for="compraTotalPaqueteria" id="total" class="form-control numeric" onchange="calculoPrecioUnidad();" />
+                                </div>
+                                <span asp-validation-for="compraTotalPaqueteria" class="text-danger"></span>
+                            </div>                           
+                            <div class="form-group">
+                                <label asp-for="precioUnidadPaqueteria" class="control-label"></label>
+                                <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" id="preciounidad" asp-for="precioUnidadPaqueteria" class="form-control" readonly ondblclick="desbloquearPU();" />
+                                    <span class="input-group-text" style="background-color:white;"><i class="bi bi-lock-fill" id="spanlock"></i></span>
+                                </div>
+                                <span asp-validation-for="precioUnidadPaqueteria" class="text-danger"></span>
+                            </div>
+                            <div class="form-group" id="HiddenElement2">
+                                <label asp-for="fechaInicioUso" class="control-label"></label>
+                                <input asp-for="fechaInicioUso" class="form-control" id="dateHidden2"/>
+                                <span asp-validation-for="fechaInicioUso" class="text-danger"></span>
+                            </div>   
+                            <div class="form-group" style="padding-top:10px; padding-bottom:10px;">
+                                <input type="checkbox" class="form-check-input" id="controlHiddenElement2" onchange="showHiddenElement(!this.checked, 'HiddenElement2'); showHiddenElement(!this.checked, 'controlHiddenElement1'); setDefaultDate(!this.checked, 'dateHidden2');" />
+                                <label class="control-label">¿Sin empezar?</label>
+                            </div>
+                            <div class="form-group" style="padding-top:10px; padding-bottom:10px;" id="controlHiddenElement1">
+                                <input type="checkbox" class="form-check-input"  onchange="showHiddenElement(this.checked, 'HiddenElement1'); setDefaultDate(this.checked, 'dateHidden1');" />
+                                <label class="control-label">¿Desea ingresar la Fecha del Fin de Uso?</label>
+                            </div>
+                            <div class="form-group" style="padding-top:3px; padding-bottom:20px;">
+                            <input type="checkbox" asp-for="esPaqueteriaRecurrente" class="form-check-input" />
+                            <label asp-for="esPaqueteriaRecurrente" class="control-label"></label>
+                            <span asp-validation-for="esPaqueteriaRecurrente" class="text-danger"></span>
+                        </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label asp-for="stockTotalCompradoPaqueteria" class="control-label"></label>
+                                <input type="number" id="stock" asp-for="stockTotalCompradoPaqueteria" class="form-control" onchange="calculoPrecioUnidad();" />
+                                <span asp-validation-for="stockTotalCompradoPaqueteria" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="fechaCompra" class="control-label"></label>
+                                <input asp-for="fechaCompra" class="form-control" />
+                                <span asp-validation-for="fechaCompra" class="text-danger"></span>                            
+                        </div>
+                            <div class="form-group visually-hidden" id="HiddenElement1">
+                                <label asp-for="fechaFinUso" class="control-label"></label>
+                                <input asp-for="fechaFinUso" class="form-control" id="dateHidden1" />
+                                <span asp-validation-for="fechaFinUso" class="text-danger"></span>
+                            </div>
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-success" data-save="modal" data-index="@Url.Action("Index")">Guardar Stock</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

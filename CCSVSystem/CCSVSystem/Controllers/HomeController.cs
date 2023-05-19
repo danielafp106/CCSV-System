@@ -15,7 +15,7 @@ namespace CCSVSystem.Controllers
             _api = api;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             //Proveedor ps = await _api.ObtenerProveedor("PVD0000002");
             return View();
