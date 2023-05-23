@@ -28,6 +28,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFxdWV0ZXJpYVxFZGl0YXJQYXF1ZXRlcmlhTW9kYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[Z:/SISTEMA CACHADA CASES/SISTEMA/CCSV-System/CCSVSystem/CCSVSystem/Views/Paqueteria/EditarPrecioPaqueteria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFxdWV0ZXJpYVxFZGl0YXJQcmVjaW9QYXF1ZXRlcmlhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[Z:/SISTEMA CACHADA CASES/SISTEMA/CCSV-System/CCSVSystem/CCSVSystem/Views/Paqueteria/EmpezarStock.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFxdWV0ZXJpYVxFbXBlemFyU3RvY2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [Z:/SISTEMA CACHADA CASES/SISTEMA/CCSV-System/CCSVSystem/CCSVSystem/Views/Paqueteria/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFxdWV0ZXJpYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -38,6 +46,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [Z:/SISTEMA CACHADA CASES/SISTEMA/CCSV-System/CCSVSystem/CCSVSystem/Views/Paqueteria/NuevoPrecioPaqueteria.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFxdWV0ZXJpYVxOdWV2b1ByZWNpb1BhcXVldGVyaWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[Z:/SISTEMA CACHADA CASES/SISTEMA/CCSV-System/CCSVSystem/CCSVSystem/Views/Paqueteria/TerminarStock.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFxdWV0ZXJpYVxUZXJtaW5hclN0b2NrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[Z:/SISTEMA CACHADA CASES/SISTEMA/CCSV-System/CCSVSystem/CCSVSystem/Views/Pedidos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [Z:/SISTEMA CACHADA CASES/SISTEMA/CCSV-System/CCSVSystem/CCSVSystem/Views/Proveedores/EditarProveedorModal.cshtml]

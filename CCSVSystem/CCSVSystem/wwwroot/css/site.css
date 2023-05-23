@@ -61,6 +61,12 @@ body {
 }
 
 .pill {
+    background-color: var(--color-secundario-hover);
+    color: white;
+}
+
+
+.pill2 {
     background-color: var(--color-principal);
     color: white;
 }
@@ -90,6 +96,22 @@ input::-webkit-inner-spin-button {
 /* Works for Firefox */
 input[type="number"] {
     -moz-appearance: textfield;
+}
+
+.idpills {
+    background-color: var(--color-secundario-hover);
+    color: white;
+    margin-top: -20px;
+    position: absolute;
+    align-self:center;
+    margin-left:10px;
+}
+
+.recurrent {
+    position: absolute;
+    margin-top: -22.5px;
+    margin-left: 99px;
+    color: var(--color-secundario-hover);
 }
 
 

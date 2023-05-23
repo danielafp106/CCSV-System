@@ -1,0 +1,54 @@
+﻿@model CCSVSystem.Models.PrecioPaqueteria
+
+
+<div class="modal fade" tabindex="-1" id="EmpezarStock" data-keyboard="false" data-bs-backdrop="static">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Empezar Stock</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body m-2">
+                <form action="@Url.Action("GuardarEmpezarStock")">
+                    <div asp-validation-summary="All" class="text-danger" hidden></div>
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label asp-for="idPaqueteria" class="control-label"></label>
+                                <input asp-for="idPaqueteria" class="form-control" hidden />
+                                <input asp-for="idPrecioPaqueteria" class="form-control" hidden />
+                                <input class="form-control" value="@Model.idPaqueteria - @ViewBag.nombrePaqueteria" disabled />
+                                <span asp-validation-for="idPaqueteria" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="form-group" id="HiddenElement1">
+                            <label asp-for="fechaInicioUso" class="control-label"></label>
+                            <input asp-for="fechaInicioUso" class="form-control" id="dateHidden1" />
+                            <span asp-validation-for="fechaInicioUso" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group" style="padding-top:3px; padding-bottom:20px;">
+                        <input type="checkbox" asp-for="esPaqueteriaRecurrente" class="form-check-input" />
+                        <label asp-for="esPaqueteriaRecurrente" class="control-label"></label>
+                        <span asp-validation-for="esPaqueteriaRecurrente" class="text-danger"></span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-success" data-save="modal" data-index="@Url.Action("Index")">Empezar Stock</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

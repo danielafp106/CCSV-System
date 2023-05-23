@@ -14,13 +14,11 @@ namespace CCSVSystem.Models
         public string? idPaqueteria { get; set; }
 
         [Display(Name = "Compra Total")]
-        [RegularExpression(@"^\d+(\.\d{1,2})?$")]
         [DataType(DataType.Currency)]
         [Required(ErrorMessage = "Este campo es obligatorio.")]
         public decimal? compraTotalPaqueteria { get; set; }
 
         [Display(Name = "Precio Unidad")]
-        [RegularExpression(@"^\d+(\.\d{1,2})?$")]
         [DataType(DataType.Currency)]
         [Required(ErrorMessage = "Este campo es obligatorio.")]
         public decimal? precioUnidadPaqueteria { get; set; }

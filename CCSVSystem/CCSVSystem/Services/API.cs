@@ -205,7 +205,7 @@ namespace CCSVSystem.Services
             return lista;
         }
 
-        public async Task<PrecioPaqueteria> ObtenerPrecioPaqueteria(string id)
+        public async Task<PrecioPaqueteria> ObtenerPrecioPaqueteria(int id)
         {
             PrecioPaqueteria objeto = new PrecioPaqueteria();
             var cliente = new HttpClient();
@@ -255,13 +255,98 @@ namespace CCSVSystem.Services
             return resultado;
         }
 
-        public async Task<bool> EliminarPrecioPaqueteria(string id)
+        public async Task<bool> EliminarPrecioPaqueteria(int id)
         {
             bool resultado = false;
             var cliente = new HttpClient();
             cliente.BaseAddress = new Uri(_baseurl);
 
             var response = await cliente.DeleteAsync($"PrecioPaqueteria/EliminarPrecioPaqueteria/{id}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+        #endregion
+
+        #region Pedido
+        public async Task<List<Pedido>> ObtenerPedidos()
+        {
+            List<Pedido> lista = new List<Pedido>();
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+            var response = await cliente.GetAsync("Pedido/ObtenerPedidos");
+            if (response.IsSuccessStatusCode)
+            {
+                var json_repuesta = await response.Content.ReadAsStringAsync();
+                var parsedObject = JObject.Parse(json_repuesta);
+                var obj = parsedObject["response"].ToString();
+                var resultado = JsonConvert.DeserializeObject<List<Pedido>>(obj);
+                lista.AddRange(resultado);
+            }
+            return lista;
+        }
+
+        public async Task<Pedido> ObtenerPedido(string id)
+        {
+            Pedido objeto = new Pedido();
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+            var response = await cliente.GetAsync($"Pedido/ObtenerPedido/{id}");
+            if (response.IsSuccessStatusCode)
+            {
+                var json_repuesta = await response.Content.ReadAsStringAsync();
+                var parsedObject = JObject.Parse(json_repuesta);
+                var obj = parsedObject["response"].ToString();
+                var resultado = JsonConvert.DeserializeObject<Pedido>(obj);
+                objeto = resultado;
+            }
+            return objeto;
+        }
+        public async Task<bool> GuardarPedido(Pedido registro)
+        {
+            bool resultado = false;
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+
+            var content = new StringContent(JsonConvert.SerializeObject(registro), Encoding.UTF8, "application/json");
+            var response = await cliente.PostAsync($"Pedido/GuardarPedido", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
+        public async Task<bool> EditarPedido(Pedido registro)
+        {
+            bool resultado = false;
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+
+            var content = new StringContent(JsonConvert.SerializeObject(registro), Encoding.UTF8, "application/json");
+            var response = await cliente.PutAsync($"Pedido/EditarPedido", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
+        public async Task<bool> EliminarPedido(string id)
+        {
+            bool resultado = false;
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+
+            var response = await cliente.DeleteAsync($"Pedido/EliminarPedido/{id}");
 
             if (response.IsSuccessStatusCode)
             {

@@ -19,9 +19,16 @@ namespace CCSVSystem.Services
         Task<bool> EliminarPaqueteria(string id);
 
         Task<List<PrecioPaqueteria>> ObtenerPreciosPaqueterias();
-        Task<PrecioPaqueteria> ObtenerPrecioPaqueteria(string id);
+        Task<PrecioPaqueteria> ObtenerPrecioPaqueteria(int id);
         Task<bool> GuardarPrecioPaqueteria(PrecioPaqueteria registro);
         Task<bool> EditarPrecioPaqueteria(PrecioPaqueteria registro);
-        Task<bool> EliminarPrecioPaqueteria(string id);
+        Task<bool> EliminarPrecioPaqueteria(int id);
+
+        //Pedidos
+        Task<List<Pedido>> ObtenerPedidos();
+        Task<Pedido> ObtenerPedido(string id);
+        Task<bool> GuardarPedido(Pedido registro);
+        Task<bool> EditarPedido(Pedido registro);
+        Task<bool> EliminarPedido(string id);
     }
 }
