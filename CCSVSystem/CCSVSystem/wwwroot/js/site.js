@@ -31,10 +31,8 @@ $(function () {
             var newBody = $('.modal-body', data);
             PlaceHolderElement.find('.modal-body').replaceWith(newBody);
 
-            console.log(data);
             var isValid = data.success;
-            console.log(isValid);
-
+            //averiguar como arreglar lo del reinicio de la pantalla
             if (isValid) {
                 PlaceHolderElement.find('.modal').modal('hide');
                 Swal.fire({
@@ -83,15 +81,25 @@ function calculoPrecioUnidad() {
     var stock = document.getElementById("stock").value;
     var total = document.getElementById("total").value;
     var preciounidad = document.getElementById("preciounidad");
-    console.log("se ejecuta" + stock + " " + total);
 
     if (!isNaN(stock) && !isNaN(total) && stock !=0 && total != 0) {
-        console.log("entro true");
         preciounidad.value = (total / stock).toFixed(2);
     }
     else {
-        console.log("entro false");
         preciounidad.value = 0.00;
+    }
+}
+
+function calculoTotalComprado() {
+    var stock = document.getElementById("stock").value;
+    var total = document.getElementById("total");
+    var preciounidad = document.getElementById("preciounidad").value;
+
+    if (!isNaN(stock) && !isNaN(preciounidad) && stock != 0 && preciounidad != 0) {
+        total.value = (stock * preciounidad).toFixed(2);
+    }
+    else {
+        total.value = 0.00;
     }
 }
 
@@ -110,3 +118,40 @@ function desbloquearPU() {
     }
 
 }
+
+function SeleccionarProducto(id,flag) {
+    var inputProd = document.getElementById("idProd");
+    var inputProd2 = document.getElementById("idProd2");
+    if (flag) {
+        inputProd.value = "";
+        inputProd2.value = "";
+    }
+    else {
+        inputProd.value = id;
+        inputProd2.value = id;
+    }
+  
+}
+
+function ReiniciarSelect() {
+    var select = document.getElementById("selectBox");
+    select.value = -1;
+}
+
+function InputsProductos(flag) {
+    var p1 = document.getElementById("p1");
+    var p2 = document.getElementById("p2");
+    var p3 = document.getElementById("p3");
+    if (flag) {
+        p1.value = "ID";
+        p2.value = "ID";
+        p3.value = "ID";
+    }
+    else {
+        p1.value = "";
+        p2.value = "";
+        p3.value = "";
+    }
+}
+
+

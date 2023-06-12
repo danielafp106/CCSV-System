@@ -356,5 +356,173 @@ namespace CCSVSystem.Services
             return resultado;
         }
         #endregion
+
+        #region Producto
+        public async Task<List<Producto>> ObtenerProductos()
+        {
+            List<Producto> lista = new List<Producto>();
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+            var response = await cliente.GetAsync("Producto/ObtenerProductos");
+            if (response.IsSuccessStatusCode)
+            {
+                var json_repuesta = await response.Content.ReadAsStringAsync();
+                var parsedObject = JObject.Parse(json_repuesta);
+                var obj = parsedObject["response"].ToString();
+                var resultado = JsonConvert.DeserializeObject<List<Producto>>(obj);
+                lista.AddRange(resultado);
+            }
+            return lista;
+        }
+
+        public async Task<Producto> ObtenerProducto(string id)
+        {
+            Producto objeto = new Producto();
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+            var response = await cliente.GetAsync($"Producto/ObtenerProducto/{id}");
+            if (response.IsSuccessStatusCode)
+            {
+                var json_repuesta = await response.Content.ReadAsStringAsync();
+                var parsedObject = JObject.Parse(json_repuesta);
+                var obj = parsedObject["response"].ToString();
+                var resultado = JsonConvert.DeserializeObject<Producto>(obj);
+                objeto = resultado;
+            }
+            return objeto;
+        }
+        public async Task<bool> GuardarProducto(Producto registro)
+        {
+            bool resultado = false;
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+
+            var content = new StringContent(JsonConvert.SerializeObject(registro), Encoding.UTF8, "application/json");
+            var response = await cliente.PostAsync($"Producto/GuardarProducto", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
+        public async Task<bool> EditarProducto(Producto registro)
+        {
+            bool resultado = false;
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+
+            var content = new StringContent(JsonConvert.SerializeObject(registro), Encoding.UTF8, "application/json");
+            var response = await cliente.PutAsync($"Producto/EditarProducto", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
+        public async Task<bool> EliminarProducto(string id)
+        {
+            bool resultado = false;
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+
+            var response = await cliente.DeleteAsync($"Producto/EliminarProducto/{id}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
+        public async Task<List<PrecioProducto>> ObtenerPreciosProductos()
+        {
+            List<PrecioProducto> lista = new List<PrecioProducto>();
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+            var response = await cliente.GetAsync("PrecioProducto/ObtenerPreciosProductos");
+            if (response.IsSuccessStatusCode)
+            {
+                var json_repuesta = await response.Content.ReadAsStringAsync();
+                var parsedObject = JObject.Parse(json_repuesta);
+                var obj = parsedObject["response"].ToString();
+                var resultado = JsonConvert.DeserializeObject<List<PrecioProducto>>(obj);
+                lista.AddRange(resultado);
+            }
+            return lista;
+        }
+
+        public async Task<PrecioProducto> ObtenerPrecioProducto(string id)
+        {
+            PrecioProducto objeto = new PrecioProducto();
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+            var response = await cliente.GetAsync($"PrecioProducto/ObtenerPrecioProducto/{id}");
+            if (response.IsSuccessStatusCode)
+            {
+                var json_repuesta = await response.Content.ReadAsStringAsync();
+                var parsedObject = JObject.Parse(json_repuesta);
+                var obj = parsedObject["response"].ToString();
+                var resultado = JsonConvert.DeserializeObject<PrecioProducto>(obj);
+                objeto = resultado;
+            }
+            return objeto;
+        }
+        public async Task<bool> GuardarPrecioProducto(PrecioProducto registro)
+        {
+            bool resultado = false;
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+
+            var content = new StringContent(JsonConvert.SerializeObject(registro), Encoding.UTF8, "application/json");
+            var response = await cliente.PostAsync($"PrecioProducto/GuardarPrecioProducto", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
+        public async Task<bool> EditarPrecioProducto(PrecioProducto registro)
+        {
+            bool resultado = false;
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+
+            var content = new StringContent(JsonConvert.SerializeObject(registro), Encoding.UTF8, "application/json");
+            var response = await cliente.PutAsync($"PrecioProducto/EditarPrecioProducto", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
+        public async Task<bool> EliminarPrecioProducto(string id)
+        {
+            bool resultado = false;
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+
+            var response = await cliente.DeleteAsync($"PrecioProducto/EliminarPrecioProducto/{id}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+        #endregion
     }
 }

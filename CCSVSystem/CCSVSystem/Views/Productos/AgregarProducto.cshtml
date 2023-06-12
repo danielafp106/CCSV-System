@@ -1,0 +1,148 @@
+﻿@model CCSVSystem.Models.PrecioProducto
+
+<div class="modal fade" tabindex="-1" id="AgregarProducto" data-keyboard="false" data-bs-backdrop="static" style=" overflow: visible;z-index: 5000;">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Nuevo Producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            
+            <div class="modal-body m-2">
+                <div class="row">
+                    <div class="">
+                        <form action="@Url.Action("GuardarProducto")">
+                            <div asp-validation-summary="All" class="text-danger" hidden></div>
+                            <div class="row justify-content-center">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label asp-for="idPedido" class="control-label"></label>
+                                        <input asp-for="idPedido" class="form-control" disabled />
+                                        <span asp-validation-for="idPedido" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group" style="padding-top:32px; padding-bottom:10px;">
+                                        <input type="checkbox" asp-for="productoRegistrado" class="form-check-input" id="controlHiddenElement2" onchange="showHiddenElement(!this.checked, 'newProduct'); showHiddenElement(this.checked, 'oldProduct'); SeleccionarProducto('ID',this.checked); ReiniciarSelect(); InputsProductos(this.checked);" />
+                                        <label class="control-label" style="margin-left:10px;">¿Es un producto ya registrado?</label>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <hr />
+                            <h5>Producto</h5>
+                            <div id="newProduct">
+                                <div class="form-group">
+                                    <input asp-for="idProducto" class="form-control" value="ID" hidden id="idProd" />
+                                    <input asp-for="producto.idProducto" class="form-control" value="ID" hidden id="idProd2" />                                   
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="producto.nombreProducto" class="control-label"></label>
+                                    <input asp-for="producto.nombreProducto" class="form-control" id="p1" />
+                                    <span asp-validation-for="producto.nombreProducto" class="text-danger"></span>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label asp-for="producto.urlProductoProveedor" class="control-label"></label>
+                                            <input asp-for="producto.urlProductoProveedor" class="form-control" id="p2" />
+                                            <span asp-validation-for="producto.urlProductoProveedor" class="text-danger"></span>
+                                        </div>
+                                     </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label asp-for="producto.urlImagenProducto" class="control-label"></label>
+                                            <input asp-for="producto.urlImagenProducto" class="form-control" id="p3" />
+                                            <span asp-validation-for="producto.urlImagenProducto" class="text-danger"></span>
+                                        </div>
+                                    </div>  
+                            </div>
+                            </div>
+                            <div id="oldProduct" class="visually-hidden" style="font-size:1rem;">
+                                <label asp-for="producto.nombreProducto" class="control-label"></label><br />
+                                <select class=form-control chosen" onchange="SeleccionarProducto(this.value)" id="selectBox">
+                                    <option disabled selected hidden value="-1">Seleccione un Producto</option>
+                                    @foreach (var p in ViewBag.prods)
+                                    {
+                                        <option value="@p.idProducto">@p.idProducto - @p.nombreProducto</option>
+                                    }
+                                </select>
+                                <span asp-validation-for="producto.idProducto" class="text-danger"></span>
+                            </div>
+                            <hr />
+                            <h5>Aranceles del Producto</h5>
+                            <div class="row justify-content-center">
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label asp-for="compraUnidadProducto" class="control-label"></label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">$</span>
+                                            <input type="number" id="preciounidad" asp-for="compraUnidadProducto" class="form-control numeric" onchange="calculoTotalComprado();" />
+                                        </div>
+                                        <span asp-validation-for="compraUnidadProducto" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label asp-for="compraUnidadPublico" class="control-label"></label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">$</span>
+                                            <input type="number" asp-for="compraUnidadPublico" class="form-control numeric" />
+                                        </div>
+                                        <span asp-validation-for="compraUnidadPublico" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label asp-for="stockTotalComprado" class="control-label"></label>
+                                        <input type="number" id="stock" asp-for="stockTotalComprado" class="form-control" onchange="calculoTotalComprado();" />
+                                        <span asp-validation-for="stockTotalComprado" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label asp-for="compraTotalProducto" class="control-label"></label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">$</span>
+                                            <input type="number" id="total" asp-for="compraTotalProducto" class="form-control numeric" readonly />
+                                        </div>                                        
+                                        <span asp-validation-for="compraTotalProducto" class="text-danger"></span>
+                                    </div>
+                                </div>  
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <script>
+                    (function () {
+                        showHiddenElement(!@Model.productoRegistrado.ToString().ToLower(), 'newProduct');
+                        showHiddenElement(@Model.productoRegistrado.ToString().ToLower(), 'oldProduct');
+                    })();
+                </script>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-success" data-save="modal" data-index="@Url.Action("Index","Pedidos")">Guardar Producto</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('#selectBox').chosen({ width: "100%" });
+    });
+</script>
+@section Scripts {
+  
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+   
+

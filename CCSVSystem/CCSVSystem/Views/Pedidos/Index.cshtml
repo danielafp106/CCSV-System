@@ -66,65 +66,73 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.fechaRecibido)
                 </td>
-                <td>
-                    $@Html.DisplayFor(modelItem => item.totalProductosPedido)
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.totalProductosPedido)
                 </td>
                 <td class="text-center">
-                    $@Html.DisplayFor(modelItem => item.totalImportePedido)
+                    @Html.DisplayFor(modelItem => item.totalImportePedido)
                 </td>
                 <td class="text-center">
-                    $@Html.DisplayFor(modelItem => item.totalPedido)
+                    @Html.DisplayFor(modelItem => item.totalPedido)
                 </td>
                 <td class="text-center">
                     @Html.DisplayFor(modelItem => item.stockPedido)
                 </td>
                 <td class="text-center">
-                  @*  <button type="button" class="btn buttonsecondary" data-bs-toggle="collapse" data-bs-target="#@id">
-                        <i class="bi bi-currency-dollar"></i>
+                    <button type="button" class="btn buttonsecondary" data-bs-toggle="collapse" data-bs-target="#@id">
+                        <i class="bi bi-box-seam-fill"></i>
                     </button>
-                    <button type="button" class="btn buttonprimary" data-url="@Url.Action("NuevoPrecioPedido", new { idPedido = modelItem.idPedido, nombrePedido = modelItem.nombrePedido})" data-toggle="ajax-modal" data-target="#NuevoPrecioPedido">
-                        <i class="bi bi-bag-plus-fill"></i>
+                    <button type="button" class="btn buttonprimary" data-url="@Url.Action("AgregarProducto","Productos", new { idPedido = item.idPedido})" data-toggle="ajax-modal" data-target="#AgregarProducto">
+                        <i class="bi bi-cart-plus-fill"></i>
                     </button>
-                    <button type="button" class="btn btn-info" style="color:white;" data-toggle="ajax-modal" data-target="#EditarPedido" data-url="@Url.Action("EditarPedidoModal", new { idPedido = modelItem.idPedido })">
+                    <button type="button" class="btn btn-info" style="color:white;" data-toggle="ajax-modal" data-target="#EditarPedido" data-url="@Url.Action("EditarPedidoModal", new { idPedido = item.idPedido })">
                         <i class="bi bi-pencil-fill"></i>
                     </button>
-                    @if (modelItem.preciosPedido.Count == 0)
+                    @*@if (item.pr == 0)
                     {
-                        <button type="button" class="btn btn-danger" onclick="EliminarRegistro('@modelItem.idPedido','esta paquetería','@ViewBag.UrlAPI')">
+                        <button type="button" class="btn btn-danger" onclick="EliminarRegistro('@item.idPedido','esta paquetería','@ViewBag.UrlAPI')">
                             <i class="bi bi-trash-fill"></i>
                         </button>
                     }*@
                 </td>
             </tr>         
-          @*  <tr class="collapseContainingDiv">
-                <td colspan="5">
-                    <div class="collapse accordion-collapse pt-2 pb-2 actualmodelItem" id='@id' style="width:95%; margin:0 auto;" onclick="NotClosed('@id')">
+            <tr class="collapseContainingDiv">
+                <td colspan="10">
+                    <div class="collapse accordion-collapse pt-2 pb-2 actualmodelItem" id='@id' style="width:100%; margin:0 auto;" onclick="NotClosed('@id')">
                         <div class="align-self-center pt-2 pb-2 card" style="width:100%;">
-                            @if (modelItem.preciosPedido.Count != 0)
+                            @if (item.PreciosProductos.Count != 0)
                             {
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th class="text-center">
-                                                @Html.DisplayNameFor(model => model.pp.esPedidoRecurrente)
+                                            <th class="text-center" colspan="2">
+                                                @Html.DisplayNameFor(item => item.pp.producto)
                                             </th>
                                             <th class="text-center">
-                                                @Html.DisplayNameFor(model => model.pp.fechaCompra)
+                                                @Html.DisplayNameFor(item => item.pp.compraUnidadProducto)
+                                            </th>
+                                            
+                                            <th class="text-center">
+                                                @Html.DisplayNameFor(item => item.pp.compraUnidadPublico)
+                                            </th>
+                                         
+                                            <th class="text-center">
+                                                @Html.DisplayNameFor(item => item.pp.importacion)
+                                            </th>
+                                           @* <th class="text-center">
+                                                @Html.DisplayNameFor(item => item.pp.paqueteria)
                                             </th>
                                             <th class="text-center">
-                                                @Html.DisplayNameFor(model => model.pp.stockTotalCompradoPedido)
+                                                @Html.DisplayNameFor(item => item.pp.tarifaEnvio)
                                             </th>
                                             <th class="text-center">
-                                                @Html.DisplayNameFor(model => model.pp.compraTotalPedido)
+                                                @Html.DisplayNameFor(item => item.pp.precioPublico)
+                                            </th>*@
+                                            <th class="text-center">
+                                                @Html.DisplayNameFor(item => item.pp.compraTotalProducto)
                                             </th>
                                             <th class="text-center">
-                                                @Html.DisplayNameFor(model => model.pp.precioUnidadPedido)
-                                            </th>
-                                            <th class="text-center">
-                                                @Html.DisplayNameFor(model => model.pp.fechaInicioUso)
-                                            </th>
-                                            <th class="text-center">
-                                                @Html.DisplayNameFor(model => model.pp.fechaFinUso)
+                                                @Html.DisplayNameFor(item => item.pp.stockTotalRealTime)/Comprado
                                             </th>
                                             <th class="text-center">
                                                 Acciones
@@ -132,63 +140,47 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach (var pps in modelItem.preciosPedido)
+                                        @foreach (var pps in item.PreciosProductos)
                                         {
                                             <tr class="align-middle">
-                                                <td class="text-center">
-                                                    <input class="form-check-input" type="checkbox" id="checkboxNoLabel" checked="@(pps.esPedidoRecurrente)" onclick="this.checked=!this.checked;">
+                                                <td class="align-text-bottom">
+                                                    <div class="align-text-bottom">
+                                                        <img src="@pps.producto.urlImagenProducto" class="rounded d-block pt-2 pb-2" style="width:30px;margin-left:15px;">
+                                                    </div>
+                                                </td>
+                                                <td >
+                                                    @pps.producto.idProducto - @pps.producto.nombreProducto
                                                 </td>
                                                 <td class="text-center">
-                                                    @pps.fechaCompra.Value.ToString("dd/MMMM/yyyy")
+                                                    $@String.Format("{0:0.00}", pps.compraUnidadProducto)
+                                                </td>
+                                               
+                                                <td class="text-center">
+                                                    $@String.Format("{0:0.00}", pps.compraUnidadPublico)
                                                 </td>
                                                 <td class="text-center">
-                                                    @pps.stockTotalCompradoPedido
+                                                    $@String.Format("{0:0.00}", pps.importacion)
                                                 </td>
                                                 <td class="text-center">
-                                                    $@String.Format("{0:0.00}", pps.compraTotalPedido)
+                                                    $@String.Format("{0:0.00}", pps.compraTotalProducto)
                                                 </td>
                                                 <td class="text-center">
-                                                    $@String.Format("{0:0.00}", pps.precioUnidadPedido)
+                                                    @pps.stockTotalRealTime/@pps.stockTotalComprado
+                                                </td>
+                                             @*   <td class="text-center">
+                                                    $@String.Format("{0:0.00}", pps.paqueteria)
                                                 </td>
                                                 <td class="text-center">
-                                                    @(!pps.fechaInicioUso.Value.ToString("dd/MMMM/yyyy").Equals("01/enero/2000") ? pps.fechaInicioUso.Value.ToString("dd/MMMM/yyyy") : "Sin empezar")
+                                                    $@String.Format("{0:0.00}", pps.tarifaEnvio)
                                                 </td>
                                                 <td class="text-center">
-                                                    @if (pps.fechaFinUso.Value.ToString("dd/MMMM/yyyy").Equals("01/enero/2000"))
-                                                    {
-                                                        @if (pps.fechaInicioUso.Value.ToString("dd/MMMM/yyyy").Equals("01/enero/2000"))
-                                                        {
-                                                            @("Sin empezar")
-                                                            ;
-                                                        }
-                                                        else
-                                                        {
-                                                            <span class="badge rounded-pill pill2">EN USO</span>
-                                                        }
-                                                    }
-                                                    else
-                                                    {
-                                                        @pps.fechaFinUso.Value.ToString("dd/MMMM/yyyy")
-                                                        ;
-                                                    }
-                                                </td>
-                                                <td class="text-center">
-                                                    @if (pps.fechaFinUso.Value.ToString("dd/MMMM/yyyy").Equals("01/enero/2000") && !pps.fechaInicioUso.Value.ToString("dd/MMMM/yyyy").Equals("01/enero/2000"))
-                                                    {
-                                                        <button type="button" class="btn btn-outline-warning buttonclear" style="border-color: transparent;" data-toggle="ajax-modal" data-target="#TerminarStock" data-url="@Url.Action("TerminarStock", new { idPrecioPedido = pps.idPrecioPedido,  nombrePedido= modelItem.nombrePedido, idPedido = pps.idPedido   })">
-                                                            <i class="bi bi-exclamation-circle-fill"></i>
-                                                        </button>
-                                                    }
-                                                    else if (pps.fechaFinUso.Value.ToString("dd/MMMM/yyyy").Equals("01/enero/2000") && pps.fechaInicioUso.Value.ToString("dd/MMMM/yyyy").Equals("01/enero/2000"))
-                                                    {
-                                                        <button type="button" class="btn btn-outline-success buttonclear" style="border-color: transparent;" data-toggle="ajax-modal" data-target="#TerminarStock" data-url="@Url.Action("EmpezarStock", new { idPrecioPedido = pps.idPrecioPedido,  nombrePedido= modelItem.nombrePedido, idPedido = pps.idPedido   })">
-                                                            <i class="bi bi-unlock-fill"></i>
-                                                        </button>
-                                                    }
-                                                    <button type="button" class="btn btn-outline-info buttonclear" style="border-color: transparent;" data-toggle="ajax-modal" data-target="#EditarPrecioPedido" data-url="@Url.Action("EditarPrecioPedido", new { idPrecioPedido = pps.idPrecioPedido, nombrePedido= modelItem.nombrePedido})">
+                                                    $@String.Format("{0:0.00}", pps.precioPublico)
+                                                </td>*@
+                                                <td class="text-center">                                                    
+                                                    <button type="button" class="btn btn-outline-info buttonclear" style="border-color: transparent;" data-toggle="ajax-modal" data-target="#EditarPrecioPedido" data-url="@Url.Action("EditarPrecioPedido", new { idPrecioPedido = pps.idPrecioProducto})">
                                                         <i class="bi bi-pencil-fill"></i>
                                                     </button>
-                                                    <button type="button" class="btn btn-outline-danger buttonclear" style="border-color: transparent;" onclick="EliminarRegistro('@pps.idPrecioPedido','este stock','@ViewBag.UrlAPIPP')">
+                                                    <button type="button" class="btn btn-outline-danger buttonclear" style="border-color: transparent;" onclick="EliminarRegistro('@pps.idPrecioProducto','este producto','@ViewBag.UrlAPIPP')">
                                                         <i class="bi bi-trash-fill"></i>
                                                     </button>
 
@@ -201,12 +193,12 @@
                             }
                             else
                             {
-                                <p class="text-center pt-3">Esta paquetería no tiene stock registrado.</p>
+                                <p class="text-center pt-3">Este pedido no tiene productos registrados.</p>
                             }
                         </div>
                     </div>
                 </td>
-            </tr>*@
+            </tr>
         }
     </tbody>
 </table>

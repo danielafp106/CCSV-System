@@ -19,17 +19,26 @@ namespace CCSVSystem.Controllers
         {
             try
             {
+                List<Producto> prods = await _api.ObtenerProductos();
                 List<Pedido> registros = await _api.ObtenerPedidos();
-    
+                registros = registros.OrderByDescending(p => p.fechaOrdenado).ToList();
+                foreach(var r in registros)
+                {
+                    foreach(var p in r.PreciosProductos)
+                    {
+                        p.producto = prods.Where(pr => pr.idProducto == p.idProducto).FirstOrDefault();
+                    }
+                }
+
                 ViewBag.UrlAPI = new Uri(_baseurl) + "Pedido/EliminarPedido/";
-                ViewBag.UrlAPIPP = new Uri(_baseurl) + "PrecioPedido/EliminarPrecioPedido/";
+                ViewBag.UrlAPIPP = new Uri(_baseurl) + "PrecioProducto/EliminarPrecioProducto/";
                 if (registros != null)
                 {
                     return View(registros);
                 }
                 else
                 {
-                    TempData["msjSinRegistros"] = "No hay paqueterias registrados en el sistema.";
+                    TempData["msjSinRegistros"] = "No hay pedidos registrados en el sistema.";
                     return View();
                 }
             }
@@ -40,6 +49,42 @@ namespace CCSVSystem.Controllers
 
             }
             return View();
+        }
+
+        public async Task<IActionResult> NuevoPedidoModal()
+        {
+            Pedido obj = new Pedido();
+            obj.stockPedido = 0;
+            obj.totalImportePedido = 0;
+            obj.totalPedido = 0;
+            obj.totalProductosPedido = 0;
+            obj.fechaRecibido = new DateTime(2000, 01, 01);
+            List<Proveedor> provs = await _api.ObtenerProveedores();
+
+            ViewBag.provs = provs.OrderBy(p => p.nombreProveedor);
+
+            return PartialView("NuevoPedidoModal", obj);
+        }
+
+        public async Task<IActionResult> GuardarPedido(Pedido o)
+        {
+            bool resultado = false;
+            if (ModelState.IsValid)
+            {
+                resultado = await _api.GuardarPedido(o);
+                TempData["resultado"] = resultado;
+                if (resultado == true)
+                {
+                    return Json(new { success = true, responseText = "OK" });
+                }
+                else
+                {
+                    return Json(new { success = false, responseText = "Algo salió mal, vuelva a intentarlo más tarde." });
+                }
+            }
+            List<Proveedor> provs = await _api.ObtenerProveedores();
+            ViewBag.provs = provs.OrderBy(p => p.nombreProveedor);
+            return PartialView("NuevoPedidoModal", o);
         }
     }
 }
