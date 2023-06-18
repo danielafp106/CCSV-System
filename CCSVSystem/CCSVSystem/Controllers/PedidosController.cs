@@ -1,6 +1,7 @@
 ﻿using CCSVSystem.Models;
 using CCSVSystem.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace CCSVSystem.Controllers
 {
@@ -85,6 +86,42 @@ namespace CCSVSystem.Controllers
             List<Proveedor> provs = await _api.ObtenerProveedores();
             ViewBag.provs = provs.OrderBy(p => p.nombreProveedor);
             return PartialView("NuevoPedidoModal", o);
+        }
+
+        public async Task<IActionResult> CalcularImportacion(string idPedido)
+        {
+            Pedido obj = new Pedido();        
+            obj.totalImportePedido = 0;
+            obj.idPedido = idPedido;
+
+
+            return PartialView("CalcularImportacion", obj);
+        }
+
+        public async Task<IActionResult> GuardarImportacion(Pedido o)
+        {
+            bool resultado = false;
+            if (o.idPedido != null && o.idPedido != "" && o.totalImportePedido != null && o.totalImportePedido != 0)
+            {
+                resultado = await _api.CalcularImportacion(o);
+                TempData["resultado"] = resultado;
+                if (resultado == true)
+                {
+                    return Json(new { success = true, responseText = "OK" });
+                }
+                else
+                {
+                    return Json(new { success = false, responseText = "Algo salió mal, vuelva a intentarlo más tarde." });
+                }
+            }
+            else
+            {
+                if (o.totalImportePedido == 0)
+                {
+                    ModelState.AddModelError(nameof(o.totalImportePedido), "El importe debe ser diferente de $0.00");
+                }            
+            }
+            return PartialView("CalcularImportacion", o);
         }
     }
 }

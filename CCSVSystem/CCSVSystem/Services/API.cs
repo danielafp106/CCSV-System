@@ -322,6 +322,22 @@ namespace CCSVSystem.Services
 
             return resultado;
         }
+        public async Task<bool> CalcularImportacion(Pedido registro)
+        {
+            bool resultado = false;
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+
+            var content = new StringContent(JsonConvert.SerializeObject(registro), Encoding.UTF8, "application/json");
+            var response = await cliente.PutAsync($"Pedido/CalcularImportacion", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
 
         public async Task<bool> EditarPedido(Pedido registro)
         {

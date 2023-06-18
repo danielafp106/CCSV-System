@@ -85,6 +85,9 @@
                     <button type="button" class="btn buttonprimary" data-url="@Url.Action("AgregarProducto","Productos", new { idPedido = item.idPedido})" data-toggle="ajax-modal" data-target="#AgregarProducto">
                         <i class="bi bi-cart-plus-fill"></i>
                     </button>
+                    <button type="button" class="btn buttonprimary" data-url="@Url.Action("CalcularImportacion","Pedidos", new { idPedido = item.idPedido})" data-toggle="ajax-modal" data-target="#CalcularImportacion">
+                        <i class="bi bi-airplane-fill"></i>
+                    </button>
                     <button type="button" class="btn btn-info" style="color:white;" data-toggle="ajax-modal" data-target="#EditarPedido" data-url="@Url.Action("EditarPedidoModal", new { idPedido = item.idPedido })">
                         <i class="bi bi-pencil-fill"></i>
                     </button>

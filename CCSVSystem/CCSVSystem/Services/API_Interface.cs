@@ -28,6 +28,7 @@ namespace CCSVSystem.Services
         Task<List<Pedido>> ObtenerPedidos();
         Task<Pedido> ObtenerPedido(string id);
         Task<bool> GuardarPedido(Pedido registro);
+        Task<bool> CalcularImportacion(Pedido registro);
         Task<bool> EditarPedido(Pedido registro);
         Task<bool> EliminarPedido(string id);
 
