@@ -44,5 +44,19 @@ namespace CCSVSystem.Services
         Task<bool> GuardarPrecioProducto(PrecioProducto registro);
         Task<bool> EditarPrecioProducto(PrecioProducto registro);
         Task<bool> EliminarPrecioProducto(string id);
+
+        //Modelos
+        Task<List<Modelo>> ObtenerModelos();
+        Task<Modelo> ObtenerModelo(string id);
+        Task<bool> GuardarModelo(Modelo registro);
+        Task<bool> EditarModelo(Modelo registro);
+        Task<bool> EliminarModelo(string id);
+
+        //Marcas
+        Task<List<Marca>> ObtenerMarcas();
+        Task<Marca> ObtenerMarca(string id);
+        Task<bool> GuardarMarca(Marca registro);
+        Task<bool> EditarMarca(Marca registro);
+        Task<bool> EliminarMarca(string id);
     }
 }

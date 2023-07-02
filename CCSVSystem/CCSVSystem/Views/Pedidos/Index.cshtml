@@ -24,20 +24,20 @@
             <th>
                 @Html.DisplayNameFor(model => model.proveedor)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.fechaOrdenado)
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.fechaOrdenado) - @Html.DisplayNameFor(model => model.fechaRecibido)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.fechaRecibido)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.totalProductosPedido)
+            <th class="text-center">
+               Tiempo
+            </th>         
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.totalPedido)
             </th>
             <th class="text-center">
                 @Html.DisplayNameFor(model => model.totalImportePedido)
             </th>
-            <th class="text-center">
-                @Html.DisplayNameFor(model => model.totalPedido)
+            <th>
+                @Html.DisplayNameFor(model => model.totalProductosPedido)
             </th>
             <th class="text-center">
                 @Html.DisplayNameFor(model => model.stockPedido)
@@ -60,20 +60,29 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.proveedor.nombreProveedor)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.fechaOrdenado)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.fechaRecibido)
+                <td class="text-center">
+                    @item.fechaOrdenado.Value.ToString("dd/MMM/yyyy").Replace(".","") -
+                    @if (item.fechaRecibido.Value.ToString("dd/MMMM/yyyy").Equals("01/enero/2000"))
+                    {
+                        <span class="badge rounded-pill pill2">EN TRANSITO</span>
+                    }
+                    else
+                    {
+                       @item.fechaRecibido.Value.ToString("dd/MMM/yyyy").Replace(".","")
+                    }
                 </td>
                 <td class="text-center">
-                    @Html.DisplayFor(modelItem => item.totalProductosPedido)
+                    <span class="badge rounded-pill pill">
+                        @Html.DisplayFor(modelItem => item.TiempoPromedio) @(item.TiempoPromedio != 1 ? " días" : " día")</span>
+                </td>             
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.totalPedido)
                 </td>
                 <td class="text-center">
                     @Html.DisplayFor(modelItem => item.totalImportePedido)
                 </td>
                 <td class="text-center">
-                    @Html.DisplayFor(modelItem => item.totalPedido)
+                    @Html.DisplayFor(modelItem => item.totalProductosPedido)
                 </td>
                 <td class="text-center">
                     @Html.DisplayFor(modelItem => item.stockPedido)
@@ -85,10 +94,10 @@
                     <button type="button" class="btn buttonprimary" data-url="@Url.Action("AgregarProducto","Productos", new { idPedido = item.idPedido})" data-toggle="ajax-modal" data-target="#AgregarProducto">
                         <i class="bi bi-cart-plus-fill"></i>
                     </button>
-                    <button type="button" class="btn buttonprimary" data-url="@Url.Action("CalcularImportacion","Pedidos", new { idPedido = item.idPedido})" data-toggle="ajax-modal" data-target="#CalcularImportacion">
+                    <button type="button" class="btn btn-primary" data-url="@Url.Action("CalcularImportacion","Pedidos", new { idPedido = item.idPedido})" data-toggle="ajax-modal" data-target="#CalcularImportacion">
                         <i class="bi bi-airplane-fill"></i>
                     </button>
-                    <button type="button" class="btn btn-info" style="color:white;" data-toggle="ajax-modal" data-target="#EditarPedido" data-url="@Url.Action("EditarPedidoModal", new { idPedido = item.idPedido })">
+                        <button type="button" class="btn btn-info" style="color:white;" data-toggle="ajax-modal" data-target="#ModificarPedido" data-url="@Url.Action("ModificarPedidoModal", new { idPedido = item.idPedido })">
                         <i class="bi bi-pencil-fill"></i>
                     </button>
                     @*@if (item.pr == 0)
@@ -100,7 +109,7 @@
                 </td>
             </tr>         
             <tr class="collapseContainingDiv">
-                <td colspan="10">
+                <td colspan="11">
                     <div class="collapse accordion-collapse pt-2 pb-2 actualmodelItem" id='@id' style="width:100%; margin:0 auto;" onclick="NotClosed('@id')">
                         <div class="align-self-center pt-2 pb-2 card" style="width:100%;">
                             @if (item.PreciosProductos.Count != 0)
@@ -113,8 +122,7 @@
                                             </th>
                                             <th class="text-center">
                                                 @Html.DisplayNameFor(item => item.pp.compraUnidadProducto)
-                                            </th>
-                                            
+                                            </th>                                         
                                             <th class="text-center">
                                                 @Html.DisplayNameFor(item => item.pp.compraUnidadPublico)
                                             </th>

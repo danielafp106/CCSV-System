@@ -270,14 +270,6 @@ select.form-control + .chosen-container-multi .chosen-results li.result-selected
     background-color: white;
 }
 
-
-
-.modal .modal-dialog-scrollable .modal-body {
-    overflow: visible!important;
-    overflow-y: visible;
-    z-index: 5000;
-}
-
 .chosen-container-single .chosen-single span {
     overflow: visible!important;
     overflow-y: visible;

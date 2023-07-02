@@ -1,0 +1,95 @@
+﻿@model CCSVSystem.Models.Pedido
+
+
+<div class="modal fade" tabindex="-1" id="ModificarPedido" data-keyboard="false" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Editar Pedido</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body m-2">
+                <div class="row">
+                    <div class="">
+                        <form action="@Url.Action("GuardarCambiosPedido")">
+                            <div asp-validation-summary="All" class="text-danger" hidden></div>
+                            <div class="form-group">
+                                <label asp-for="idPedido" class="control-label"></label>
+                                <input asp-for="idPedido" class="form-control" disabled />
+                                <span asp-validation-for="idPedido" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="idProveedor" class="control-label"></label>
+                                <select asp-for="idProveedor" class="form-select">
+                                    <option disabled selected hidden>Seleccione un Proveedor</option>
+                                    @foreach (var p in ViewBag.provs)
+                                    {
+                                        <option value="@p.idProveedor">@p.nombreProveedor</option>
+                                    }
+                                </select>
+                                <span asp-validation-for="idProveedor" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="fechaOrdenado" class="control-label"></label>
+                                <input asp-for="fechaOrdenado" class="form-control" id="dateHidden2" />
+                                <span asp-validation-for="fechaOrdenado" class="text-danger"></span>
+                            </div>
+                            @if (Model.fechaRecibido.Value.ToString("dd/MMMM/yyyy").Equals("01/enero/2000"))
+                            {
+                                <div class="form-group visually-hidden" id="HiddenElement1">
+                                    <label asp-for="fechaRecibido" class="control-label"></label>
+                                    <input asp-for="fechaRecibido" class="form-control" id="dateHidden1" />
+                                    <span asp-validation-for="fechaRecibido" class="text-danger"></span>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="form-group" id="HiddenElement1">
+                                    <label asp-for="fechaRecibido" class="control-label"></label>
+                                    <input asp-for="fechaRecibido" class="form-control" id="dateHidden1" />
+                                    <span asp-validation-for="fechaRecibido" class="text-danger"></span>
+                                </div>
+                            }
+                            @if (Model.fechaRecibido.Value.ToString("dd/MMMM/yyyy").Equals("01/enero/2000"))
+                            {
+                                <div class="form-group" style="padding-top:10px; padding-bottom:10px;" id="controlHiddenElement1">
+                                <input type="checkbox" class="form-check-input" onchange="showHiddenElement(this.checked, 'HiddenElement1'); setDefaultDate(this.checked, 'dateHidden1');" />
+                                <label class="control-label">¿Desea ingresar la Fecha de Recibido?</label>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="form-group" style="padding-top:10px; padding-bottom:10px;" id="controlHiddenElement1">
+                                <input type="checkbox" class="form-check-input" onchange="showHiddenElement(this.checked, 'HiddenElement1'); setDefaultDate(this.checked, 'dateHidden1');" checked="true"/>
+                                <label class="control-label">¿Desea ingresar la Fecha de Recibido?</label>
+                                </div>
+                                
+                            }
+
+                            @*<div class="form-group visually-hidden" id="HiddenElement1">
+                                <input asp-for="totalProductosPedido" class="form-control" />
+                                <input asp-for="totalImportePedido" class="form-control" />
+                                <input asp-for="totalPedido" class="form-control" />
+                                <input asp-for="stockPedido" class="form-control" />
+                            </div>*@
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-success" data-save="modal" data-index="@Url.Action("Index")">Guardar Pedido</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

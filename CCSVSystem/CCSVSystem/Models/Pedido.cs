@@ -14,16 +14,18 @@ namespace CCSVSystem.Models
 
         [Required(ErrorMessage = "Este campo es obligatorio.")]
         [Display(Name = "Ordenado")]
+        [DisplayFormat(DataFormatString = "{0:dd/MMM/yyyy}")]
         [DataType(DataType.Date)]
         public DateTime? fechaOrdenado { get; set; }
 
         [Display(Name = "Recibido")]
+        [DisplayFormat(DataFormatString = "{0:dd/MMM/yyyy}")]
         [DataType(DataType.Date)]
         public DateTime? fechaRecibido { get; set; }
 
         [Required(ErrorMessage = "Este campo es obligatorio.")]
         [DataType(DataType.Currency)]
-        [Display(Name = "Total de la Compra Final")]
+        [Display(Name = "Total Final")]
         public decimal? totalProductosPedido { get; set; }
 
         [Display(Name = "Total de Importe")]
@@ -43,5 +45,6 @@ namespace CCSVSystem.Models
         public virtual ICollection<PrecioProducto> PreciosProductos { get; set; } = new List<PrecioProducto>();
 
         public virtual PrecioProducto? pp { get; set; }
+        public virtual int? TiempoPromedio { get; set; }
     }
 }

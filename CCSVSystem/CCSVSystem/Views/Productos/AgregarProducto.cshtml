@@ -60,7 +60,7 @@
                             </div>
                             <div id="oldProduct" class="visually-hidden" style="font-size:1rem;">
                                 <label asp-for="producto.nombreProducto" class="control-label"></label><br />
-                                <select class=form-control chosen" onchange="SeleccionarProducto(this.value)" id="selectBox">
+                                <select class="form-control chosen" onchange="SeleccionarProducto(this.value)" id="selectBox">
                                     <option disabled selected hidden value="-1">Seleccione un Producto</option>
                                     @foreach (var p in ViewBag.prods)
                                     {
@@ -111,6 +111,40 @@
                                     </div>
                                 </div>  
                             </div>
+                            <hr />
+                            <h5>Detalle de Stock por Modelos</h5>
+                            <div class="row justify-content-center">
+                                <div class="col-4">
+                                    <label class="control-label">Modelo</label>
+                                    <select class="form-select" id="selectModelos">
+                                        <option disabled selected hidden value="-1">Seleccione un Modelo</option>
+                                        @foreach (var m in ViewBag.modelos)
+                                        {
+                                            <optgroup label="@m.nombreMarca">
+                                                @foreach (var mo in m.modelos)
+                                                {
+                                                    <option value="@mo.idModelo">@mo.nombreModelo</option>
+                                                }
+                                            </optgroup>
+                                        }                                      
+                                    </select>
+                                 </div>
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <label class="control-label">Stock</label>
+                                        <input type="number" class="form-control" onchange="calculoTotalComprado();" id="stockModelos" />
+                                        <span class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <br />
+                                    <button type="button" class="btn buttonprimary" onclick="AgregarStock();"><b><i class="bi bi-plus-lg"></i>Agregar Stock</b></button>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center" id="listadoModelos">                               
+                            </div>
+                            
+
                         </form>
                     </div>
                 </div>

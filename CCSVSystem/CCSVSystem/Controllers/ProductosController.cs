@@ -22,6 +22,8 @@ namespace CCSVSystem.Controllers
             PrecioProducto obj = new PrecioProducto();
             obj.idPedido = idPedido;
             obj.compraTotalProducto = 0;
+            List<Marca> modelos = await _api.ObtenerMarcas();
+            ViewBag.modelos = modelos;
             return PartialView("AgregarProducto", obj);
         }
 

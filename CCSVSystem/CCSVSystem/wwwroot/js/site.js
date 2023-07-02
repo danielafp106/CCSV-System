@@ -155,3 +155,31 @@ function InputsProductos(flag) {
 }
 
 
+function AgregarStock() {
+    var stockM = document.getElementById("stockModelos");
+    var selectM = document.getElementById("selectModelos");
+    var divM = document.getElementById("listadoModelos");
+    var stockcurrent = document.getElementById(selectM.value);
+    var last = '<div class="col-4" style="margin-top:2px;"> </div>';
+    if (selectM.value != -1 && stockM != '' && stockM != 0) {
+        if (stockcurrent != null) {
+            stockcurrent.value = parseInt(stockcurrent.value) + parseInt(stockM.value);
+        }
+        else {
+            divM.insertAdjacentHTML('beforeend', AddModelsHTML(selectM.options[selectM.selectedIndex].text, 'sinid'));
+            divM.insertAdjacentHTML('beforeend', AddModelsHTML(stockM.value, selectM.value));
+            divM.insertAdjacentHTML('beforeend', last);
+        }
+        stockM.value = '';
+        selectM.value = -1;
+    }
+   
+}
+
+function AddModelsHTML(valor,id) {
+    var t = '<div class="col-4" style="margin-top:2px;">' +
+        '<input type="text" class="form-control" value="' + valor + '" disabled id="'+id+'"/>' +
+        ' </div>';
+    console.log(t);
+    return t;                               
+}

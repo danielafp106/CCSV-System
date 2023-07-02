@@ -540,5 +540,175 @@ namespace CCSVSystem.Services
             return resultado;
         }
         #endregion
+
+        #region Modelos
+        public async Task<List<Modelo>> ObtenerModelos()
+        {
+            List<Modelo> lista = new List<Modelo>();
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+            var response = await cliente.GetAsync("Modelo/ObtenerModelos");
+            if (response.IsSuccessStatusCode)
+            {
+                var json_repuesta = await response.Content.ReadAsStringAsync();
+                var parsedObject = JObject.Parse(json_repuesta);
+                var obj = parsedObject["response"].ToString();
+                var resultado = JsonConvert.DeserializeObject<List<Modelo>>(obj);
+                lista.AddRange(resultado);
+            }
+            return lista;
+        }
+
+        public async Task<Modelo> ObtenerModelo(string id)
+        {
+            Modelo objeto = new Modelo();
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+            var response = await cliente.GetAsync($"Modelo/ObtenerModelo/{id}");
+            if (response.IsSuccessStatusCode)
+            {
+                var json_repuesta = await response.Content.ReadAsStringAsync();
+                var parsedObject = JObject.Parse(json_repuesta);
+                var obj = parsedObject["response"].ToString();
+                var resultado = JsonConvert.DeserializeObject<Modelo>(obj);
+                objeto = resultado;
+            }
+            return objeto;
+        }
+        public async Task<bool> GuardarModelo(Modelo registro)
+        {
+            bool resultado = false;
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+
+            var content = new StringContent(JsonConvert.SerializeObject(registro), Encoding.UTF8, "application/json");
+            var response = await cliente.PostAsync($"Modelo/GuardarModelo", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
+        public async Task<bool> EditarModelo(Modelo registro)
+        {
+            bool resultado = false;
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+
+            var content = new StringContent(JsonConvert.SerializeObject(registro), Encoding.UTF8, "application/json");
+            var response = await cliente.PutAsync($"Modelo/EditarModelo", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
+        public async Task<bool> EliminarModelo(string id)
+        {
+            bool resultado = false;
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+
+            var response = await cliente.DeleteAsync($"Modelo/EliminarModelo/{id}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+        #endregion
+
+        #region Marcas
+        public async Task<List<Marca>> ObtenerMarcas()
+        {
+            List<Marca> lista = new List<Marca>();
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+            var response = await cliente.GetAsync("Marca/ObtenerMarcas");
+            if (response.IsSuccessStatusCode)
+            {
+                var json_repuesta = await response.Content.ReadAsStringAsync();
+                var parsedObject = JObject.Parse(json_repuesta);
+                var obj = parsedObject["response"].ToString();
+                var resultado = JsonConvert.DeserializeObject<List<Marca>>(obj);
+                lista.AddRange(resultado);
+            }
+            return lista;
+        }
+
+        public async Task<Marca> ObtenerMarca(string id)
+        {
+            Marca objeto = new Marca();
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+            var response = await cliente.GetAsync($"Marca/ObtenerMarca/{id}");
+            if (response.IsSuccessStatusCode)
+            {
+                var json_repuesta = await response.Content.ReadAsStringAsync();
+                var parsedObject = JObject.Parse(json_repuesta);
+                var obj = parsedObject["response"].ToString();
+                var resultado = JsonConvert.DeserializeObject<Marca>(obj);
+                objeto = resultado;
+            }
+            return objeto;
+        }
+        public async Task<bool> GuardarMarca(Marca registro)
+        {
+            bool resultado = false;
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+
+            var content = new StringContent(JsonConvert.SerializeObject(registro), Encoding.UTF8, "application/json");
+            var response = await cliente.PostAsync($"Marca/GuardarMarca", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
+        public async Task<bool> EditarMarca(Marca registro)
+        {
+            bool resultado = false;
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+
+            var content = new StringContent(JsonConvert.SerializeObject(registro), Encoding.UTF8, "application/json");
+            var response = await cliente.PutAsync($"Marca/EditarMarca", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
+        public async Task<bool> EliminarMarca(string id)
+        {
+            bool resultado = false;
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+
+            var response = await cliente.DeleteAsync($"Marca/EliminarMarca/{id}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+        #endregion
     }
 }
