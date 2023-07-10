@@ -710,5 +710,90 @@ namespace CCSVSystem.Services
             return resultado;
         }
         #endregion
+
+        #region DetalleProductoModelos
+        public async Task<List<DetalleProductoModelo>> ObtenerDetalleProductoModelos()
+        {
+            List<DetalleProductoModelo> lista = new List<DetalleProductoModelo>();
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+            var response = await cliente.GetAsync("DetalleProductoModelo/ObtenerDetalleProductoModelos");
+            if (response.IsSuccessStatusCode)
+            {
+                var json_repuesta = await response.Content.ReadAsStringAsync();
+                var parsedObject = JObject.Parse(json_repuesta);
+                var obj = parsedObject["response"].ToString();
+                var resultado = JsonConvert.DeserializeObject<List<DetalleProductoModelo>>(obj);
+                lista.AddRange(resultado);
+            }
+            return lista;
+        }
+
+        public async Task<DetalleProductoModelo> ObtenerDetalleProductoModelo(int id)
+        {
+            DetalleProductoModelo objeto = new DetalleProductoModelo();
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+            var response = await cliente.GetAsync($"DetalleProductoModelo/ObtenerDetalleProductoModelo/{id}");
+            if (response.IsSuccessStatusCode)
+            {
+                var json_repuesta = await response.Content.ReadAsStringAsync();
+                var parsedObject = JObject.Parse(json_repuesta);
+                var obj = parsedObject["response"].ToString();
+                var resultado = JsonConvert.DeserializeObject<DetalleProductoModelo>(obj);
+                objeto = resultado;
+            }
+            return objeto;
+        }
+        public async Task<bool> GuardarDetalleProductoModelo(DetalleProductoModelo registro)
+        {
+            bool resultado = false;
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+
+            var content = new StringContent(JsonConvert.SerializeObject(registro), Encoding.UTF8, "application/json");
+            var response = await cliente.PostAsync($"DetalleProductoModelo/GuardarDetalleProductoModelo", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
+        public async Task<bool> EditarDetalleProductoModelo(DetalleProductoModelo registro)
+        {
+            bool resultado = false;
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+
+            var content = new StringContent(JsonConvert.SerializeObject(registro), Encoding.UTF8, "application/json");
+            var response = await cliente.PutAsync($"DetalleProductoModelo/EditarDetalleProductoModelo", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
+        public async Task<bool> EliminarDetalleProductoModelo(int id)
+        {
+            bool resultado = false;
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri(_baseurl);
+
+            var response = await cliente.DeleteAsync($"DetalleProductoModelo/EliminarDetalleProductoModelo/{id}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+        #endregion
     }
 }

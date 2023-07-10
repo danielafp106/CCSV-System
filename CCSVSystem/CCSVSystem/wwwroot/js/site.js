@@ -159,27 +159,75 @@ function AgregarStock() {
     var stockM = document.getElementById("stockModelos");
     var selectM = document.getElementById("selectModelos");
     var divM = document.getElementById("listadoModelos");
+    var indexI = document.getElementById("contadorModelos");
+
+    var stock = document.getElementById("stock");
+
+    var index = parseInt(indexI.value);
     var stockcurrent = document.getElementById(selectM.value);
-    var last = '<div class="col-4" style="margin-top:2px;"> </div>';
-    if (selectM.value != -1 && stockM != '' && stockM != 0) {
-        if (stockcurrent != null) {
+    //var last = '<div class="col-4" style="margin-top:2px;"> </div>';
+    if (selectM.value != -1 && parseInt(stockM.value) != '' && parseInt(stockM.value) != 0)
+    {
+        if (stockcurrent != null)
+        {
             stockcurrent.value = parseInt(stockcurrent.value) + parseInt(stockM.value);
         }
-        else {
-            divM.insertAdjacentHTML('beforeend', AddModelsHTML(selectM.options[selectM.selectedIndex].text, 'sinid'));
-            divM.insertAdjacentHTML('beforeend', AddModelsHTML(stockM.value, selectM.value));
-            divM.insertAdjacentHTML('beforeend', last);
+        else
+        {
+            divM.insertAdjacentHTML('beforeend', AddModelsHTML(selectM.options[selectM.selectedIndex].text, 'MARCA' + selectM.value,0,index));
+            divM.insertAdjacentHTML('beforeend', AddModelsHTML(stockM.value, selectM.value, 1, index));
+            divM.insertAdjacentHTML('beforeend', AddModelsHTML('', selectM.value, 3, index));
+            indexI.value = index + 1;
         }
+        stock.value = parseInt(stock.value) + parseInt(stockM.value);
+        calculoTotalComprado();
         stockM.value = '';
         selectM.value = -1;
+        
     }
+   
    
 }
 
-function AddModelsHTML(valor,id) {
-    var t = '<div class="col-4" style="margin-top:2px;">' +
-        '<input type="text" class="form-control" value="' + valor + '" disabled id="'+id+'"/>' +
-        ' </div>';
-    console.log(t);
+function AddModelsHTML(valor, id, n, i) {
+    if (n == 0) {
+        var t = '<div class="col-4" style="margin-top:2px;">' +           
+            '<input type="text" class="form-control" value="' + valor + '" id="' + id + '" readonly/>' +
+            ' </div>';
+    }
+    else if (n == 1) {
+        var t = '<div class="col-4" style="margin-top:2px;">' +
+            '<input type="text" class="form-control visually-hidden" id="ID-'+id+'" value="' + id + '" readonly name="detalleProductosModelos[' + i + '].idModelo"/>' +
+            '<input type="number" class="form-control" value="' + valor + '" id="' + id + '" name="detalleProductosModelos[' + i +'].stockProductoModelo" readonly/>' +
+            ' </div>';
+    }
+    else {
+        var t = '<div class="col-4" style="margin-top:2px;">' +
+            '<button type="button" class="btn btn-danger" id="EliminarM' + id +'" onclick="DeleteModelsHTML(\'' + id + '\')">' +
+            '<i class="bi bi-trash-fill"></i>'+
+            '</button>'+
+            ' </div>';
+    }
+    
     return t;                               
+}
+
+function DeleteModelsHTML(id) {
+    var iStock = document.getElementById(id);
+    var iMarca = document.getElementById("MARCA" + id);
+    var iMarcaId = document.getElementById("ID-" + id);
+    var iEliminar = document.getElementById("EliminarM" + id);
+    var stock = document.getElementById("stock");
+
+    stock.value = parseInt(stock.value) - parseInt(iStock.value);
+    calculoTotalComprado();
+
+    iStock.value = null;
+    iMarca.value = null;
+    iMarcaId.value = null;
+
+    iStock.classList.add("visually-hidden");
+    iMarca.classList.add("visually-hidden");
+    iEliminar.classList.add("visually-hidden")
+
 }

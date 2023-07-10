@@ -151,8 +151,12 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @{
+                                            int j = 0;
+                                        }
                                         @foreach (var pps in item.PreciosProductos)
                                         {
+                                            string idM = "PP"+pps.idPrecioProducto+"-" + (j++);
                                             <tr class="align-middle">
                                                 <td class="align-text-bottom">
                                                     <div class="align-text-bottom">
@@ -186,19 +190,68 @@
                                                 </td>
                                                 <td class="text-center">
                                                     $@String.Format("{0:0.00}", pps.precioPublico)
-                                                </td>*@
-                                                <td class="text-center">                                                    
+                                                </td>*@                                               
+                                                <td class="text-center">
+                                                    <button type="button" class="btn buttonsecondary" data-bs-toggle="collapse" data-bs-target="#@idM">
+                                                        <i class="bi bi-box-seam-fill"></i>
+                                                    </button>
                                                     <button type="button" class="btn btn-outline-info buttonclear" style="border-color: transparent;" data-toggle="ajax-modal" data-target="#EditarPrecioPedido" data-url="@Url.Action("EditarPrecioPedido", new { idPrecioPedido = pps.idPrecioProducto})">
                                                         <i class="bi bi-pencil-fill"></i>
                                                     </button>
-                                                    <button type="button" class="btn btn-outline-danger buttonclear" style="border-color: transparent;" onclick="EliminarRegistro('@pps.idPrecioProducto','este producto','@ViewBag.UrlAPIPP')">
-                                                        <i class="bi bi-trash-fill"></i>
-                                                    </button>
-
-
+                                                    @if (pps.detalleProductosModelos.Count == 0)
+                                                    {
+                                                        <button type="button" class="btn btn-outline-danger buttonclear" style="border-color: transparent;" onclick="EliminarRegistro('@pps.idPrecioProducto','este producto','@ViewBag.UrlAPIPP')">
+                                                            <i class="bi bi-trash-fill"></i>
+                                                        </button>
+                                                    }                                                 
                                                 </td>
-                                            </tr>
-                                        }
+                                            </tr>                           
+                                            <tr class="collapseContainingDiv">
+                                                <td colspan="11">
+                                                    <div class="collapse accordion-collapse pt-2 pb-2 actualmodelItem" id='@idM' style="width:100%; margin:0 auto;" onclick="NotClosed('@idM')">
+                                                        <div class="align-self-center mx-auto" style="width:50%;">
+                                                            @if (pps.detalleProductosModelos.Count != 0)
+                                                            {
+                                                                <table class="table">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="text-center">
+                                                                                Modelo
+                                                                            </th>
+                                                                            <th class="text-center">
+                                                                               Stock Comprado
+                                                                            </th>
+                                                                            <th class="text-center">
+                                                                               Stock Real Time
+                                                                            </th>                                                              
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        @foreach (var m in pps.detalleProductosModelos)
+                                                                        {
+                                                                            <tr>
+                                                                                <td>@m.DetalleModeloMarca</td>
+                                                                                <td class="text-center">@m.stockProductoModelo</td>
+                                                                                <td class="text-center">@m.stockRealTimeProductoModelo</td>
+                                                                            </tr>                                                                           
+                                                                        }
+                                                                        <tr>
+                                                                            <td class="text-center"><b>Totales</b></td>
+                                                                            <td class="text-center">@pps.stockTotalComprado</td>
+                                                                            <td class="text-center">@pps.stockTotalRealTime</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            }
+                                                            else
+                                                            {
+                                                                <p class="text-center pt-3">Este producto no tiene stock registrado.</p>
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr> 
+                                            }
                                     </tbody>
                                 </table>
                             }
@@ -211,6 +264,7 @@
                 </td>
             </tr>
         }
+        
     </tbody>
 </table>
 

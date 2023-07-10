@@ -22,6 +22,8 @@ namespace CCSVSystem.Controllers
             {
                 List<Producto> prods = await _api.ObtenerProductos();
                 List<Pedido> registros = await _api.ObtenerPedidos();
+                List<PrecioProducto> preciosproductos = await _api.ObtenerPreciosProductos();
+                List<Modelo> modelo = await _api.ObtenerModelos();
                 registros = registros.OrderByDescending(p => p.fechaOrdenado).ToList();
                 foreach (var r in registros)
                 {
@@ -31,6 +33,12 @@ namespace CCSVSystem.Controllers
                     foreach (var p in r.PreciosProductos)
                     {
                         p.producto = prods.Where(pr => pr.idProducto == p.idProducto).FirstOrDefault();
+                        p.detalleProductosModelos = preciosproductos.Where(a => a.idPrecioProducto == p.idPrecioProducto).FirstOrDefault().detalleProductosModelos;
+
+                        foreach(var m in p.detalleProductosModelos)
+                        {
+                            m.DetalleModeloMarca = modelo.Where(mo=>mo.idModelo==m.idModelo).FirstOrDefault().nombreModelo;
+                        }
                     }
                 }
 

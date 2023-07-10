@@ -37,8 +37,8 @@ namespace CCSVSystem.Models
         public int? stockTotalComprado { get; set; }
         [Display(Name = "Live Stock")]
         public int? stockTotalRealTime { get; set; }
-
-        //public virtual ICollection<DetalleProductoModelo> detalleProductosModelos { get; set; } = new List<DetalleProductoModelo>();
+        [Required(ErrorMessage = "Este campo es obligatorio.")]
+        public virtual ICollection<DetalleProductoModelo>? detalleProductosModelos { get; set; } = new List<DetalleProductoModelo>();
         public virtual Pedido? pedido { get; set; }
         [Display(Name = "Producto")]
         public virtual Producto? producto { get; set; }
